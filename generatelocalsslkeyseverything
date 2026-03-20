@@ -1,0 +1,33 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\Administrator> $OPENSSL = "C:\Users\Administrator\Downloads\openssl-3.6.1-oqs_provider-0.11.0\bin\openssl.exe"
+PS C:\Users\Administrator> & $OPENSSL genrsa -out "D:\npci_keys\private.key.pem" 2048
+PS C:\Users\Administrator> & $OPENSSL rsa -in "D:\npci_keys\private.key.pem" -pubout -out "D:\npci_keys\public.txt"
+writing RSA key
+PS C:\Users\Administrator> @"
+>> [req]
+>> default_bits = 2048
+>> prompt = no
+>> default_md = sha256
+>> distinguished_name = dn
+>> x509_extensions = v3_req
+>>
+>> [dn]
+>> C = IN
+>> ST = Rajasthan
+>> L = Rajsamand
+>> O = Houston System Pvt. Ltd.
+>> OU = Toll Plaza IT
+>> CN = balichatollplaza.co.in
+>> emailAddress = singhkalika054@gmail.com
+>>
+>> [v3_req]
+>> basicConstraints = critical,CA:FALSE
+>> keyUsage = critical,digitalSignature,keyEncipherment
+>> subjectKeyIdentifier = hash
+>> authorityKeyIdentifier = keyid,issuer
+>> "@ | Set-Content -Encoding ascii "D:\npci_keys\npci_cert.cnf"
+PS C:\Users\Administrator> & $OPENSSL req -new -x509 -key "D:\npci_keys\private.key.pem" -out "D:\npci_keys\certificate.pem" -days 365 -config "D:\npci_keys\npci_cert.cnf"
+PS C:\Users\Administrator> Copy-Item "D:\npci_keys\certificate.pem" "D:\npci_keys\certificate.crt"
+PS C:\Users\Administrator>
