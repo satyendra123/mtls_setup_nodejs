@@ -1,0 +1,360 @@
+}
+paymentDetection called with body: { 
+  tagid: '34161FA820328A5226962C60',
+  status: 'active',
+  result: 'SUCCESS',
+  vehicletype: 'VC4',
+  vehicleno: 'GJ27AC9406',
+  tid: 'E28011C120000759CB5D031F',
+  vehicleclass: 'VC4',
+  respcode: '00',
+  msgid: '536777260614171419138',
+  validtagslog_id: '58706',
+  anpr_id: null,
+  readerVerificationResult: {
+    tagUserMemory: { tagSignature: null, tagVRN: 'GJ27AC9406', tagVC: 'VC4' },
+    public_key_cvv: null,
+    sign_auth: null,
+    tag_verified: 'false',
+    txn_counter: 'E28011C120000759CB5D031F',       
+    txn_status: 'active',
+    ts_read: '2026-06-14T17:14:18',
+    vehicle_auth: 'pending'
+  },
+  tag_signature: null,
+  tag_vrn: 'GJ27AC9406',
+  tag_vc: 'VC4',
+  public_key_cvv: null,
+  sign_auth: null,
+  tag_verified: 'false',
+  txn_counter: 'E28011C120000759CB5D031F',
+  txn_status: 'active',
+  ts_read: '2026-06-14T17:14:18',
+  vehicle_auth: 'pending'
+}
+ReqPay url: https://iblrequest1.maximusinfoware.com/NETC/api/ReqPay
+ReqPay request_xml:  
+<etc:ReqPay xmlns:etc="http://npci.org/etc/schema/">
+  <Head msgId="536777260614171424652" orgId="BALI" 
+ts="2026-06-14T17:14:24" ver="1.0"/>
+  <Meta/>
+  <Txn id="536777260614171424652" note="" orgTxnId="" refId="" refUrl="" ts="2026-06-14T17:14:18" type="DEBIT">
+    <EntryTxn id="536777260614171424652" tsRead="2026-06-14T17:14:18" ts="2026-06-14T17:14:18" type="DEBIT"/>
+  </Txn>
+  <Plaza geoCode="24.8762,73.6852" id="536777" name="Balicha" subtype="National" type="Toll">
+    <EntryPlaza geoCode="24.8762,73.6852" id="536777" name="Balicha" subtype="National" type="Toll"/> 
+    <Lane direction="S" id="4" readerId="1007" Status="OPEN" Mode="Normal" laneType="hybrid" Floor="" 
+ExitGate=""/>
+    <EntryLane direction="S" id="4" readerId="1007" Status="OPEN" Mode="Normal" laneType="hybrid" Floor="" EntryGate=""/>
+    <ReaderVerificationResult publicKeyCVV="" procRestrictionResult="ok" signAuth="VALID" tagVerified="NETC TAG" ts="2026-06-14T17:14:18" txnCounter="0" 
+txnStatus="SUCCESS" vehicleAuth="UNKNOWN">
+      <TagUserMemory>
+        <Detail name="TagSignature" value="E28011C120000759CB5D031F"/>
+        <Detail name="TagVRN" value="GJ27AC9406"/> 
+        <Detail name="TagVC" value="VC4"/>
+      </TagUserMemory>
+    </ReaderVerificationResult>
+  </Plaza>
+  <Vehicle TID="E28011C120000759CB5D031F" tagId="34161FA820328A5226962C60" wim="" staticweight="">    
+    <VehicleDetails>
+      <Detail name="AVC" value="1"/>
+      <Detail name="LPNumber" value="GJ27AC9406"/> 
+    </VehicleDetails>
+  </Vehicle>
+  <Payment>
+    <Amount curr="INR" value="25" PriceMode="POINT" IsOverWeightCharged="FALSE" PaymentMode="Tag">    
+      <OverwightAmount curr="INR" value="0" PaymentMode="Tag"/>
+    </Amount>
+  </Payment>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>6qw2cxDLukq1G2I/5A0TH7hPNDw=</DigestValue></Reference></SignedInfo><SignatureValue>xlr7sbk2cv02LoRBZqva0lUEh6rPP2iIm8q5sEz2JJSSUePDAfWGDT85x/O21SwLHIkV/Yavlx9LJeVtTL9ayNdi8iN/yRD6rLDqFCWXPrGPMjOES7uLkpS34pveiXdy8H2v9ty+jQXsluuweOGjuxYxkZhA709TUXwSHQwMNBUdWGnqp11g8ZWHsgwbqUVEcVG2OCMLTG7/Nl+qE6axZOqgK5GfellqXxS7bHSjKDjSXy+nRgiq73RtrWicfUUuErIs8txomhefR0j33CMfYcfQX9Dtdx2IElDlcgbBGpRlB7EQd4h3f1i58wMadcb8XsyNkfsoJ30AuAJQkCo36w==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIEVzCCAz+gAwIBAgIUCU0bj+U7IQM2+z0O3CJ9B4C7DgwwDQYJKoZIhvcNAQELBQAwgboxCzAJBgNVBAYTAklOMRIwEAYDVQQIDAlSYWphc3RoYW4xEjAQBgNVBAcMCVJhanNhbWFuZDEhMB8GA1UECgwYSG91c3RvbiBTeXN0ZW0gUHZ0LiBMdGQuMRYwFAYDVQQLDA1Ub2xsIFBsYXphIElUMR8wHQYDVQQDDBZiYWxpY2hhdG9sbHBsYXphLmNvLmluMScwJQYJKoZIhvcNAQkBFhhzaW5naGthbGlrYTA1NEBnbWFpbC5jb20wHhcNMjYwMzE5MTgyOTQwWhcNMjcwMzE5MTgyOTQwWjCBujELMAkGA1UEBhMCSU4xEjAQBgNVBAgMCVJhamFzdGhhbjESMBAGA1UEBwwJUmFqc2FtYW5kMSEwHwYDVQQKDBhIb3VzdG9uIFN5c3RlbSBQdnQuIEx0ZC4xFjAUBgNVBAsMDVRvbGwgUGxhemEgSVQxHzAdBgNVBAMMFmJhbGljaGF0b2xscGxhemEuY28uaW4xJzAlBgkqhkiG9w0BCQEWGHNpbmdoa2FsaWthMDU0QGdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMxiWYXYBnlwn9gSA706BF1EpBpm8NPWkY971SxbcoFRmz43PBYvhTexSbwYBucZUgNYNXNfkqW+jcfSrzsIBHkDd0RT0ea7REGktDT5pVndxXLSc3Zo7E7i6ow+N/Psyt4k8Sas9WEJ9+S7Lo+ba/CA4Mf5loQwdl8+II8SX3rH24HqAS/vI+smP4VEcXFX9WaxaisqGLll6vjK32o7CBAIyWwTjsAJzdGRfhfLBUpo2unPxAYA98DVG/rLQdJC1FRK61q5Ui/iGOEfP0OTo58ypSsHs0ogZcizGWsbJ2RVppcDsBpMiiHB2/1Cxzf0UhEBPCjyjFBtnOmGu58O+y8CAwEAAaNTMFEwHQYDVR0OBBYEFOp4zyFI7YEI44dXa8UCDSaZFHpbMB8GA1UdIwQYMBaAFOp4zyFI7YEI44dXa8UCDSaZFHpbMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAAMrjPfdBWTx5oJQumFKa7I9Y4AlBmb2EESMsyO/HKUiXfuYzHbr/sB5F8G1KLvxg3iVW6SDetBUSVZGMv54jaTd3OG/JW3VThdgQGgBpNuU1+aXk+eE69KXlsozOvjfQGscKyj4IPvCpIQJpPYtDQamgH31EGFl8z7s76r/nB75MVNSto5mucmVzvQ2o1j2Oh3nQ8O1mzqP7V36YQ58smpD36CJsbFH7zh7IEwhnRVYVuwq7m4BeBmgxz7UPritxkG4r/T2CPbb5w2J06R1A9gBLFjF+/OtT5FkCCgmjzaSqyLeSN+rW3c+2XYbNhBLtvC2kNuXTgKurhbJsRZIVJc=</X509Certificate></X509Data></KeyInfo></Signature></etc:ReqPay>
+ReqPay response_status: 202
+ReqPay response_xml: Accepted
+[NETC_CALLBACK] ResponsePay accepted { 
+  root: 'RespPay',
+  msgId: '536777260614171424652',
+  orgId: 'BALI',
+  txnId: '536777260614171424652',
+  matchedValidtagslogId: 58706
+}
+getTagInfo called with: { 
+  tagId: '34161FA820328EE83FB5CDA0',
+  operator_id: 28,
+  shift_id: 3,
+  lane_id: 4,
+  entrydatetime: '2026-06-14T17:15:38'
+}
+TagDetails url: https://iblrequest1.maximusinfoware.com/NETC/api/RequestTagDetail
+TagDetails request_xml:  
+            <etc:ReqTagDetails xmlns:etc="http://npci.org/etc/schema/">
+                <Head ver="1.0" ts="2026-06-14T17:15:40" orgId="BALI" msgId="536777260614171540133"/> 
+                <Txn id="536777260614171540133" note="2026-06-14T17:15:40" ts="2026-06-14T17:15:40" type="FETCH">
+                    <Vehicle TID="" vehicleRegNo="" tagId="34161FA820328EE83FB5CDA0"/>
+                </Txn>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod 
+Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>W9F+lJ3oKw1tRrNChMuQ75p1Pvc=</DigestValue></Reference></SignedInfo><SignatureValue>SwEFHqRIu+InWrUlpw12d9BCkVbmTPItYke8SMwmq4ApNMje65U9ekOuo1qoF/ACBTtsDU/MbNi94T9ar6+0lrj5g+w/SmvC79PqNL9JYjLI/T7c985vPvLVHgwrxKQQEr2IjbgNHQaqEYt0brTyliTt6pXp6d7/QWq4Lnx9MZdc2mjPh+l83/6ggwdsh5eq2zZBPFoYIsBAjlVnEusLcKRKGhaEPY2nIMnvWuEHKx9d961vMdjShgExk5FgDBaLDpVRiyQ1O6l7pN8vXgCo7VnBfmckdPJ3x3JBG4KVMHZ42c+mVf6q7BdMLXTDqr1FfUdIfQ4UlYFjsZbg/xHfyQ==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIEVzCCAz+gAwIBAgIUCU0bj+U7IQM2+z0O3CJ9B4C7DgwwDQYJKoZIhvcNAQELBQAwgboxCzAJBgNVBAYTAklOMRIwEAYDVQQIDAlSYWphc3RoYW4xEjAQBgNVBAcMCVJhanNhbWFuZDEhMB8GA1UECgwYSG91c3RvbiBTeXN0ZW0gUHZ0LiBMdGQuMRYwFAYDVQQLDA1Ub2xsIFBsYXphIElUMR8wHQYDVQQDDBZiYWxpY2hhdG9sbHBsYXphLmNvLmluMScwJQYJKoZIhvcNAQkBFhhzaW5naGthbGlrYTA1NEBnbWFpbC5jb20wHhcNMjYwMzE5MTgyOTQwWhcNMjcwMzE5MTgyOTQwWjCBujELMAkGA1UEBhMCSU4xEjAQBgNVBAgMCVJhamFzdGhhbjESMBAGA1UEBwwJUmFqc2FtYW5kMSEwHwYDVQQKDBhIb3VzdG9uIFN5c3RlbSBQdnQuIEx0ZC4xFjAUBgNVBAsMDVRvbGwgUGxhemEgSVQxHzAdBgNVBAMMFmJhbGljaGF0b2xscGxhemEuY28uaW4xJzAlBgkqhkiG9w0BCQEWGHNpbmdoa2FsaWthMDU0QGdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMxiWYXYBnlwn9gSA706BF1EpBpm8NPWkY971SxbcoFRmz43PBYvhTexSbwYBucZUgNYNXNfkqW+jcfSrzsIBHkDd0RT0ea7REGktDT5pVndxXLSc3Zo7E7i6ow+N/Psyt4k8Sas9WEJ9+S7Lo+ba/CA4Mf5loQwdl8+II8SX3rH24HqAS/vI+smP4VEcXFX9WaxaisqGLll6vjK32o7CBAIyWwTjsAJzdGRfhfLBUpo2unPxAYA98DVG/rLQdJC1FRK61q5Ui/iGOEfP0OTo58ypSsHs0ogZcizGWsbJ2RVppcDsBpMiiHB2/1Cxzf0UhEBPCjyjFBtnOmGu58O+y8CAwEAAaNTMFEwHQYDVR0OBBYEFOp4zyFI7YEI44dXa8UCDSaZFHpbMB8GA1UdIwQYMBaAFOp4zyFI7YEI44dXa8UCDSaZFHpbMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAAMrjPfdBWTx5oJQumFKa7I9Y4AlBmb2EESMsyO/HKUiXfuYzHbr/sB5F8G1KLvxg3iVW6SDetBUSVZGMv54jaTd3OG/JW3VThdgQGgBpNuU1+aXk+eE69KXlsozOvjfQGscKyj4IPvCpIQJpPYtDQamgH31EGFl8z7s76r/nB75MVNSto5mucmVzvQ2o1j2Oh3nQ8O1mzqP7V36YQ58smpD36CJsbFH7zh7IEwhnRVYVuwq7m4BeBmgxz7UPritxkG4r/T2CPbb5w2J06R1A9gBLFjF+/OtT5FkCCgmjzaSqyLeSN+rW3c+2XYbNhBLtvC2kNuXTgKurhbJsRZIVJc=</X509Certificate></X509Data></KeyInfo></Signature></etc:ReqTagDetails>
+TagDetails response_status: 200
+TagDetails response_xml: <etc:RespTagDetails xmlns:etc="http://npci.org/etc/schema/"><Head msgId="536777260614171540133" orgId="INDA" ts="2026-06-14T17:15:40" ver="1.0" /><Txn id="536777260614171540133" note="" orgTxnId="" refUrl="http://npci.org/etc/schema/" ts="2026-06-14T17:15:40" type="FETCH"><Resp respCode="000" result="SUCCESS" successReqCnt="1" totReqCnt="1" ts="2026-06-14T17:15:40"><Vehicle errCode="000"><VehicleDetails><Detail name="TAGID" value="34161FA820328EE83FB5CDA0" /><Detail name="REGNUMBER" value="GJ18EE7942" /><Detail name="TID" value="E28011C120000E32C4350331" /><Detail name="VEHICLECLASS" value="VC4" /><Detail name="TAGSTATUS" value="A" /><Detail name="ISSUEDATE" value="2025-08-23" /><Detail name="EXCCODE" value="00" /><Detail name="BANKID" value="608116" /><Detail name="COMVEHICLE" value="F" /></VehicleDetails></Vehicle></Resp></Txn><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>op05SP/1vJO28JOPvaAJKkX4YZMLYoNsINxaFmPOA+Y=</DigestValue></Reference></SignedInfo><SignatureValue>nISXIkdLRb5UitEWuu9kVZl/1sCbtO6iTLB1gh8z3oZOkveaVODiHMfM8g4ejxkOXWnVh6wSGecTiXoamM7IFFWZBlJqEwOuqmsFcBH2E9KShyqzfBrPYnYi43sKoEteqhNs0SrF39hntRlDA0xH0oVwatHyfndjuVHoLzVioUDjX0jDG910Lrl5T4sLWgaOoHPEP1iLC2sLA9aJTgWi9ZIW4Mk2GPi8ybgQ99BKMYhZ5WLirwLLndw9BWMQRQv4KJRRMrIFQkUNkvOZpkb15rv8FI0BAcOnujAiqozol8yKIcfHxxi3yaTCuEQ1B+lOBuYivuCQViqoc6PUdLw9/g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=*.maximusinfoware.in, O=MAXIMUS INFOWARE (INDIA) PRIVATE LIMITED, L=Thane, S=Maharashtra, C=IN</X509SubjectName><X509Certificate>MIIGvjCCBaagAwIBAgIMUH8hXj0zecAnGEcZMA0GCSqGSIb3DQEBCwUAMFAxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMSYwJAYDVQQDEx1HbG9iYWxTaWduIFJTQSBPViBTU0wgQ0EgMjAxODAeFw0yMzA2MDIxMTAxNDJaFw0yNDA3MDMxMTAxNDFaMIGFMQswCQYDVQQGEwJJTjEUMBIGA1UECBMLTWFoYXJhc2h0cmExDjAMBgNVBAcTBVRoYW5lMTEwLwYDVQQKEyhNQVhJTVVTIElORk9XQVJFIChJTkRJQSkgUFJJVkFURSBMSU1JVEVEMR0wGwYDVQQDDBQqLm1heGltdXNpbmZvd2FyZS5pbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMOpFPZHZNPLJlz+3+/Eer61dcRQI1JkkxOGspsJGA/J1mt4l6CFDAQdXRODqVoEmeWv0vz4ikPW6WeSFUos4aCisWt9MvOoAfZG6P/yhyxz4EJU6Sv/uNv9iCcNiIoFM2AhMeGjA3SFROohIW/fNF99i3hoCDK2MKS+NzSk/tAP3kgPSqY3fDnreu+Ub+CgS+MUl1Wim++Po/AADbTG5uQGWorbvGRVXKSvHvwvYuk34S4aWvsNXapxBNVZN5/MZipSCcdbQU0aDasvkiHaiTuLwPE3XhqIhR+bn0nMU0Dn+QrXOGiZQl4F3RSpmY+xx+hsc3BGiti061QjZRwkQMMCAwEAAaOCA2AwggNcMA4GA1UdDwEB/wQEAwIFoDCBjgYIKwYBBQUHAQEEgYEwfzBEBggrBgEFBQcwAoY4aHR0cDovL3NlY3VyZS5nbG9iYWxzaWduLmNvbS9jYWNlcnQvZ3Nyc2FvdnNzbGNhMjAxOC5jcnQwNwYIKwYBBQUHMAGGK2h0dHA6Ly9vY3NwLmdsb2JhbHNpZ24uY29tL2dzcnNhb3Zzc2xjYTIwMTgwVgYDVR0gBE8wTTBBBgkrBgEEAaAyARQwNDAyBggrBgEFBQcCARYmaHR0cHM6Ly93d3cuZ2xvYmFsc2lnbi5jb20vcmVwb3NpdG9yeS8wCAYGZ4EMAQICMAkGA1UdEwQCMAAwPwYDVR0fBDgwNjA0oDKgMIYuaHR0cDovL2NybC5nbG9iYWxzaWduLmNvbS9nc3JzYW92c3NsY2EyMDE4LmNybDAzBgNVHREELDAqghQqLm1heGltdXNpbmZvd2FyZS5pboISbWF4aW11c2luZm93YXJlLmluMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAfBgNVHSMEGDAWgBT473/yzXhnqN5vjySNiPGHAwKz6zAdBgNVHQ4EFgQUauHATXvW/3nfcIEfS4GyY7RVvE4wggF/BgorBgEEAdZ5AgQCBIIBbwSCAWsBaQB2AO7N0GTV2xrOxVy3nbTNE6Iyh0Z8vOzew1FIWUZxH7WbAAABiHvFRrAAAAQDAEcwRQIgOu/GnbCLypOn1V5qI2ZOSwM3QQU4kstZvEpLAzjUZx0CIQC5LtfHV937T9oaGd50cQwJgoIE8guNGHPGdo0LMTgmTwB3AEiw42vapkc0D+VqAvqdMOscUgHLVt0sgdm7v6s52IRzAAABiHvFRsEAAAQDAEgwRgIhAPUgakyR06Lvcynii6eHG6puank9+quDPAX+Y/a3gTojAiEA/TfIJ4rrywyWiPa7cMLupaSvAd+sg6B92AuUu3ozDRQAdgDatr9rP7W2Ip+bwrtca+hwkXFsu1GEhTS9pD0wSNf7qwAAAYh7xUbdAAAEAwBHMEUCIFlGSsOW/Pmm+NHT0LXLHpFKbcSfYqBVcdo5NKqQr/4LAiEAum6CD9VRRRZ7SRAPqJIGuHl7aBaknroBaHuE3SVYNuUwDQYJKoZIhvcNAQELBQADggEBAKGkD0Xt6QnKiuA4YXrr2+I0DOm2WVVPC2DYsLkB/uzM/geubm5oBg3N7FCO6wBO8nFgx6jk11Xz/wBm7NZ4tecBnZnRnwasxKm9lfCRz8hDXsxY6WsGPjnVJ0kpdxIEmp9PWaBPBfD+Aq9RIvuNToSUdXBmvg6Dnnm1wAWK9jITUhJ5DMd8n9UCXgAfW4zo20ylnzvrfnti92IGoWLtporPo50Pf6jAoSIQ/oL54bKR8NO2D+W4+EivViRhInHyxbWHQ/R0GAlNJjv59meyOZ+W+VgCSGEjpk11oEP822Tr65fldRlRJ3h7ry59lptNT5c6F7y502xrcDYOGWukkCM=</X509Certificate></X509Data></KeyInfo></Signature></etc:RespTagDetails>
+paymentDetection called with body: { 
+  tagid: '34161FA820328EE83FB5CDA0',
+  status: 'active',
+  result: 'SUCCESS',
+  vehicletype: 'VC4',
+  vehicleno: 'GJ18EE7942',
+  tid: 'E28011C120000E32C4350331',
+  vehicleclass: 'VC4',
+  respcode: '00',
+  msgid: '536777260614171540133',
+  validtagslog_id: '58706',
+  anpr_id: null,
+  readerVerificationResult: {
+    tagUserMemory: { tagSignature: null, tagVRN: 'GJ18EE7942', tagVC: 'VC4' },
+    public_key_cvv: null,
+    sign_auth: null,
+    tag_verified: 'false',
+    txn_counter: 'E28011C120000E32C4350331',       
+    txn_status: 'active',
+    ts_read: '2026-06-14T17:15:39',
+    vehicle_auth: 'pending'
+  },
+  tag_signature: null,
+  tag_vrn: 'GJ18EE7942',
+  tag_vc: 'VC4',
+  public_key_cvv: null,
+  sign_auth: null,
+  tag_verified: 'false',
+  txn_counter: 'E28011C120000E32C4350331',
+  txn_status: 'active',
+  ts_read: '2026-06-14T17:15:39',
+  vehicle_auth: 'pending'
+}
+ReqPay url: https://iblrequest1.maximusinfoware.com/NETC/api/ReqPay
+ReqPay request_xml:  
+<etc:ReqPay xmlns:etc="http://npci.org/etc/schema/">
+  <Head msgId="536777260614171542292" orgId="BALI" 
+ts="2026-06-14T17:15:42" ver="1.0"/>
+  <Meta/>
+  <Txn id="536777260614171542292" note="" orgTxnId="" refId="" refUrl="" ts="2026-06-14T17:15:38" type="DEBIT">
+    <EntryTxn id="536777260614171542292" tsRead="2026-06-14T17:15:39" ts="2026-06-14T17:15:38" type="DEBIT"/>
+  </Txn>
+  <Plaza geoCode="24.8762,73.6852" id="536777" name="Balicha" subtype="National" type="Toll">
+    <EntryPlaza geoCode="24.8762,73.6852" id="536777" name="Balicha" subtype="National" type="Toll"/> 
+    <Lane direction="S" id="4" readerId="1007" Status="OPEN" Mode="Normal" laneType="hybrid" Floor="" 
+ExitGate=""/>
+    <EntryLane direction="S" id="4" readerId="1007" Status="OPEN" Mode="Normal" laneType="hybrid" Floor="" EntryGate=""/>
+    <ReaderVerificationResult publicKeyCVV="" procRestrictionResult="ok" signAuth="VALID" tagVerified="NETC TAG" ts="2026-06-14T17:15:38" txnCounter="0" 
+txnStatus="SUCCESS" vehicleAuth="UNKNOWN">
+      <TagUserMemory>
+        <Detail name="TagSignature" value="E28011C120000E32C4350331"/>
+        <Detail name="TagVRN" value="GJ18EE7942"/> 
+        <Detail name="TagVC" value="VC4"/>
+      </TagUserMemory>
+    </ReaderVerificationResult>
+  </Plaza>
+  <Vehicle TID="E28011C120000E32C4350331" tagId="34161FA820328EE83FB5CDA0" wim="" staticweight="">    
+    <VehicleDetails>
+      <Detail name="AVC" value="1"/>
+      <Detail name="LPNumber" value="GJ18EE7942"/> 
+    </VehicleDetails>
+  </Vehicle>
+  <Payment>
+    <Amount curr="INR" value="25" PriceMode="POINT" IsOverWeightCharged="FALSE" PaymentMode="Tag">    
+      <OverwightAmount curr="INR" value="0" PaymentMode="Tag"/>
+    </Amount>
+  </Payment>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>uLFJscY3nBVTwAIdkidC7klJcJs=</DigestValue></Reference></SignedInfo><SignatureValue>yFp7LjQC9YB0fMHFqBrUyMv0wjdiJLY8vnjyI5fZgg5bka3Zd73wxrFN+rdsGtKDC3tt4odm9NBOPqjnDi4EE6WzO6H21hOygAWvy8Wn0ZeA7fLy5wmyX3ZXoq29yKGOfxQ7WQ9Ql3oq2bgoBEn/M3B+Cm34jVDWzSnFu7c5yP8lroS2KkLlhBbaRA2ZrEFs6IUGbi9yFA/fwTYhGyrd1bctQNsxe1IeD2swRC1q4YQYOkLKADutvshnaBRXwAkvCOOfFPUv7jA/ZQCfT+rvNyIgkTaD4Ef8RF7RIQH2g30K+mHrJ2Su/eeE5VxDCXL68MRn3N9CbFHIbuGQyNsaQw==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIEVzCCAz+gAwIBAgIUCU0bj+U7IQM2+z0O3CJ9B4C7DgwwDQYJKoZIhvcNAQELBQAwgboxCzAJBgNVBAYTAklOMRIwEAYDVQQIDAlSYWphc3RoYW4xEjAQBgNVBAcMCVJhanNhbWFuZDEhMB8GA1UECgwYSG91c3RvbiBTeXN0ZW0gUHZ0LiBMdGQuMRYwFAYDVQQLDA1Ub2xsIFBsYXphIElUMR8wHQYDVQQDDBZiYWxpY2hhdG9sbHBsYXphLmNvLmluMScwJQYJKoZIhvcNAQkBFhhzaW5naGthbGlrYTA1NEBnbWFpbC5jb20wHhcNMjYwMzE5MTgyOTQwWhcNMjcwMzE5MTgyOTQwWjCBujELMAkGA1UEBhMCSU4xEjAQBgNVBAgMCVJhamFzdGhhbjESMBAGA1UEBwwJUmFqc2FtYW5kMSEwHwYDVQQKDBhIb3VzdG9uIFN5c3RlbSBQdnQuIEx0ZC4xFjAUBgNVBAsMDVRvbGwgUGxhemEgSVQxHzAdBgNVBAMMFmJhbGljaGF0b2xscGxhemEuY28uaW4xJzAlBgkqhkiG9w0BCQEWGHNpbmdoa2FsaWthMDU0QGdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMxiWYXYBnlwn9gSA706BF1EpBpm8NPWkY971SxbcoFRmz43PBYvhTexSbwYBucZUgNYNXNfkqW+jcfSrzsIBHkDd0RT0ea7REGktDT5pVndxXLSc3Zo7E7i6ow+N/Psyt4k8Sas9WEJ9+S7Lo+ba/CA4Mf5loQwdl8+II8SX3rH24HqAS/vI+smP4VEcXFX9WaxaisqGLll6vjK32o7CBAIyWwTjsAJzdGRfhfLBUpo2unPxAYA98DVG/rLQdJC1FRK61q5Ui/iGOEfP0OTo58ypSsHs0ogZcizGWsbJ2RVppcDsBpMiiHB2/1Cxzf0UhEBPCjyjFBtnOmGu58O+y8CAwEAAaNTMFEwHQYDVR0OBBYEFOp4zyFI7YEI44dXa8UCDSaZFHpbMB8GA1UdIwQYMBaAFOp4zyFI7YEI44dXa8UCDSaZFHpbMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAAMrjPfdBWTx5oJQumFKa7I9Y4AlBmb2EESMsyO/HKUiXfuYzHbr/sB5F8G1KLvxg3iVW6SDetBUSVZGMv54jaTd3OG/JW3VThdgQGgBpNuU1+aXk+eE69KXlsozOvjfQGscKyj4IPvCpIQJpPYtDQamgH31EGFl8z7s76r/nB75MVNSto5mucmVzvQ2o1j2Oh3nQ8O1mzqP7V36YQ58smpD36CJsbFH7zh7IEwhnRVYVuwq7m4BeBmgxz7UPritxkG4r/T2CPbb5w2J06R1A9gBLFjF+/OtT5FkCCgmjzaSqyLeSN+rW3c+2XYbNhBLtvC2kNuXTgKurhbJsRZIVJc=</X509Certificate></X509Data></KeyInfo></Signature></etc:ReqPay>
+ReqPay response_status: 202
+ReqPay response_xml: Accepted
+[NETC_CALLBACK] ResponsePay accepted { 
+  root: 'RespPay',
+  msgId: '536777260614171542292',
+  orgId: 'BALI',
+  txnId: '536777260614171542292',
+  matchedValidtagslogId: 58706
+}
+getTagInfo called with: { 
+  tagId: '34161FA8203289722A5102E0',
+  operator_id: 30,
+  shift_id: 3,
+  lane_id: 6,
+  entrydatetime: '2026-06-14T17:16:09'
+}
+TagDetails url: https://iblrequest1.maximusinfoware.com/NETC/api/RequestTagDetail
+TagDetails request_xml:  
+            <etc:ReqTagDetails xmlns:etc="http://npci.org/etc/schema/">
+                <Head ver="1.0" ts="2026-06-14T17:16:11" orgId="BALI" msgId="536777260614171611290"/> 
+                <Txn id="536777260614171611290" note="2026-06-14T17:16:11" ts="2026-06-14T17:16:11" type="FETCH">
+                    <Vehicle TID="" vehicleRegNo="" tagId="34161FA8203289722A5102E0"/>
+                </Txn>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod 
+Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>5+lbBv+EM/aDtRV9m4b4ExJ2oFM=</DigestValue></Reference></SignedInfo><SignatureValue>Qja8EOzRuytRMtwtOMo+dgviHobZJdRidd47x6FfQoBFBnnNlSGAeX2SO4W2T++4/XZ7/hiVGWmSkObL+qpF4ek61iBFiCSokrLQbJMR4uXcuUqQ2KCq25rK2LmbQStX9J1sUzq1m6Rk7WvPegVi/EtJPixU5toU/AH4Yd+wEEFdAOAlra+R8X272VQP6+hniVcZXgzGyDplKJWLVni2sn8ckZ4Q5KDKAzjqsb6AVJREPpbiAMzxyP0g3ig1wGSFqWj2imdtBcFv+vwdYuBNo0RrDA9bc51CitGTwjrHdt06SUkNH4yioFiTslPvjyJiHt40rQ8bw4MyQNQI44kgEQ==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIEVzCCAz+gAwIBAgIUCU0bj+U7IQM2+z0O3CJ9B4C7DgwwDQYJKoZIhvcNAQELBQAwgboxCzAJBgNVBAYTAklOMRIwEAYDVQQIDAlSYWphc3RoYW4xEjAQBgNVBAcMCVJhanNhbWFuZDEhMB8GA1UECgwYSG91c3RvbiBTeXN0ZW0gUHZ0LiBMdGQuMRYwFAYDVQQLDA1Ub2xsIFBsYXphIElUMR8wHQYDVQQDDBZiYWxpY2hhdG9sbHBsYXphLmNvLmluMScwJQYJKoZIhvcNAQkBFhhzaW5naGthbGlrYTA1NEBnbWFpbC5jb20wHhcNMjYwMzE5MTgyOTQwWhcNMjcwMzE5MTgyOTQwWjCBujELMAkGA1UEBhMCSU4xEjAQBgNVBAgMCVJhamFzdGhhbjESMBAGA1UEBwwJUmFqc2FtYW5kMSEwHwYDVQQKDBhIb3VzdG9uIFN5c3RlbSBQdnQuIEx0ZC4xFjAUBgNVBAsMDVRvbGwgUGxhemEgSVQxHzAdBgNVBAMMFmJhbGljaGF0b2xscGxhemEuY28uaW4xJzAlBgkqhkiG9w0BCQEWGHNpbmdoa2FsaWthMDU0QGdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMxiWYXYBnlwn9gSA706BF1EpBpm8NPWkY971SxbcoFRmz43PBYvhTexSbwYBucZUgNYNXNfkqW+jcfSrzsIBHkDd0RT0ea7REGktDT5pVndxXLSc3Zo7E7i6ow+N/Psyt4k8Sas9WEJ9+S7Lo+ba/CA4Mf5loQwdl8+II8SX3rH24HqAS/vI+smP4VEcXFX9WaxaisqGLll6vjK32o7CBAIyWwTjsAJzdGRfhfLBUpo2unPxAYA98DVG/rLQdJC1FRK61q5Ui/iGOEfP0OTo58ypSsHs0ogZcizGWsbJ2RVppcDsBpMiiHB2/1Cxzf0UhEBPCjyjFBtnOmGu58O+y8CAwEAAaNTMFEwHQYDVR0OBBYEFOp4zyFI7YEI44dXa8UCDSaZFHpbMB8GA1UdIwQYMBaAFOp4zyFI7YEI44dXa8UCDSaZFHpbMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAAMrjPfdBWTx5oJQumFKa7I9Y4AlBmb2EESMsyO/HKUiXfuYzHbr/sB5F8G1KLvxg3iVW6SDetBUSVZGMv54jaTd3OG/JW3VThdgQGgBpNuU1+aXk+eE69KXlsozOvjfQGscKyj4IPvCpIQJpPYtDQamgH31EGFl8z7s76r/nB75MVNSto5mucmVzvQ2o1j2Oh3nQ8O1mzqP7V36YQ58smpD36CJsbFH7zh7IEwhnRVYVuwq7m4BeBmgxz7UPritxkG4r/T2CPbb5w2J06R1A9gBLFjF+/OtT5FkCCgmjzaSqyLeSN+rW3c+2XYbNhBLtvC2kNuXTgKurhbJsRZIVJc=</X509Certificate></X509Data></KeyInfo></Signature></etc:ReqTagDetails>
+TagDetails response_status: 200
+TagDetails response_xml: <etc:RespTagDetails xmlns:etc="http://npci.org/etc/schema/"><Head msgId="536777260614171611290" orgId="INDA" ts="2026-06-14T17:16:11" ver="1.0" /><Txn id="536777260614171611290" note="" orgTxnId="" refUrl="http://npci.org/etc/schema/" ts="2026-06-14T17:16:11" type="FETCH"><Resp respCode="000" result="SUCCESS" successReqCnt="1" totReqCnt="1" ts="2026-06-14T17:16:11"><Vehicle errCode="000"><VehicleDetails><Detail name="TAGID" value="34161FA8203289722A5102E0" /><Detail name="REGNUMBER" value="UP15CE4330" /><Detail name="TID" value="E280110520007A9BC3500989" /><Detail name="VEHICLECLASS" value="VC4" /><Detail name="TAGSTATUS" value="A" /><Detail name="ISSUEDATE" value="2021-11-24" /><Detail name="EXCCODE" value="00" /><Detail name="BANKID" value="607417" /><Detail name="COMVEHICLE" value="F" /></VehicleDetails></Vehicle></Resp></Txn><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>54e2PNmmyemqckiP1fiHEUupE0A/0cc8Qd5NAAjeHMg=</DigestValue></Reference></SignedInfo><SignatureValue>jUZE0+DWm84dvU0LvS86iHL10RfDpgE6u+fgv/CGe9dXTqR8Qc5nlbh6+fHMKZds2zjK2bita68HYoPk+4ALRQ0tf1Xu8ta8J/poJ6+AwvV+A1u/ADnppXhFRSOoYoDBpSZZvkfVqwwC1f4iqTsfRer67cfY7SlcDRqb0bLZp7adpoFn8nWs/succYEuWYt9CZVMW9OP+wRRITyYyrj0ewTh+cyIDGd6Mo3uliqP0nYJnAEsOv4vUJs9lGqZm5guxogHVeyO5locf1XBg8oFNkBGMiRxyI54s8XX3In+OWP+dBaDeCtkIJiCTzGFsZVyA3MpfFx7ppg3M5r4E/GJ8w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=*.maximusinfoware.in, O=MAXIMUS INFOWARE (INDIA) PRIVATE LIMITED, L=Thane, S=Maharashtra, C=IN</X509SubjectName><X509Certificate>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</X509Certificate></X509Data></KeyInfo></Signature></etc:RespTagDetails>
+paymentDetection called with body: { 
+  tagid: '34161FA8203289722A5102E0',
+  status: 'active',
+  result: 'SUCCESS',
+  vehicletype: 'VC4',
+  vehicleno: 'UP15CE4330',
+  tid: 'E280110520007A9BC3500989',
+  vehicleclass: 'VC4',
+  respcode: '00',
+  msgid: '536777260614171611290',
+  validtagslog_id: '58705',
+  anpr_id: null,
+  readerVerificationResult: {
+    tagUserMemory: { tagSignature: null, tagVRN: 'UP15CE4330', tagVC: 'VC4' },
+    public_key_cvv: null,
+    sign_auth: null,
+    tag_verified: 'false',
+    txn_counter: 'E280110520007A9BC3500989',       
+    txn_status: 'active',
+    ts_read: '2026-06-14T17:16:10',
+    vehicle_auth: 'pending'
+  },
+  tag_signature: null,
+  tag_vrn: 'UP15CE4330',
+  tag_vc: 'VC4',
+  public_key_cvv: null,
+  sign_auth: null,
+  tag_verified: 'false',
+  txn_counter: 'E280110520007A9BC3500989',
+  txn_status: 'active',
+  ts_read: '2026-06-14T17:16:10',
+  vehicle_auth: 'pending'
+}
+ReqPay url: https://iblrequest1.maximusinfoware.com/NETC/api/ReqPay
+ReqPay request_xml:  
+<etc:ReqPay xmlns:etc="http://npci.org/etc/schema/">
+  <Head msgId="536777260614171614809" orgId="BALI" 
+ts="2026-06-14T17:16:14" ver="1.0"/>
+  <Meta/>
+  <Txn id="536777260614171614809" note="" orgTxnId="" refId="" refUrl="" ts="2026-06-14T17:16:09" type="DEBIT">
+    <EntryTxn id="536777260614171614809" tsRead="2026-06-14T17:16:10" ts="2026-06-14T17:16:09" type="DEBIT"/>
+  </Txn>
+  <Plaza geoCode="24.8762,73.6852" id="536777" name="Balicha" subtype="National" type="Toll">
+    <EntryPlaza geoCode="24.8762,73.6852" id="536777" name="Balicha" subtype="National" type="Toll"/> 
+    <Lane direction="N" id="6" readerId="1007" Status="OPEN" Mode="Normal" laneType="hybrid" Floor="" 
+ExitGate=""/>
+    <EntryLane direction="N" id="6" readerId="1007" Status="OPEN" Mode="Normal" laneType="hybrid" Floor="" EntryGate=""/>
+    <ReaderVerificationResult publicKeyCVV="" procRestrictionResult="ok" signAuth="VALID" tagVerified="NETC TAG" ts="2026-06-14T17:16:09" txnCounter="0" 
+txnStatus="SUCCESS" vehicleAuth="UNKNOWN">
+      <TagUserMemory>
+        <Detail name="TagSignature" value="E280110520007A9BC3500989"/>
+        <Detail name="TagVRN" value="UP15CE4330"/> 
+        <Detail name="TagVC" value="VC4"/>
+      </TagUserMemory>
+    </ReaderVerificationResult>
+  </Plaza>
+  <Vehicle TID="E280110520007A9BC3500989" tagId="34161FA8203289722A5102E0" wim="" staticweight="">    
+    <VehicleDetails>
+      <Detail name="AVC" value="1"/>
+      <Detail name="LPNumber" value="UP15CE4330"/> 
+    </VehicleDetails>
+  </Vehicle>
+  <Payment>
+    <Amount curr="INR" value="25" PriceMode="POINT" IsOverWeightCharged="FALSE" PaymentMode="Tag">    
+      <OverwightAmount curr="INR" value="0" PaymentMode="Tag"/>
+    </Amount>
+  </Payment>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>mgCxZuja0Y42bTugBejvofr60jM=</DigestValue></Reference></SignedInfo><SignatureValue>eHmlVi0vzBfM93KVhiqMoHXXmz7ylu6FqlRijFFYjA/5T5YJ/sSoXAKXdQL9CQR0Do3OrAOqAl0wQ+lDiNXuPJopmac+KxjU8NZxmytqRPQRpLnkyZNpUDOU5LoK5qPlVI2Fl9mEcdwdYoCNGcUXCTdnNPOZ5ey6rq45j35WkhJwO1p+Qynpe9FDlAX+eYk/CFhj23Ct2RnxmonwjSFj3qNJDCpeOQktoW9pursTTjKJl6V5aZ/augJiNkWCoPkKFjaYc+ERD6yZz2YSib9LYd8zQVg/T3ZjyS0lPtQxnWZeesGr3flkmjlZtcrDzTZUzSC5BDc8fbKgkdG107Oskw==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIEVzCCAz+gAwIBAgIUCU0bj+U7IQM2+z0O3CJ9B4C7DgwwDQYJKoZIhvcNAQELBQAwgboxCzAJBgNVBAYTAklOMRIwEAYDVQQIDAlSYWphc3RoYW4xEjAQBgNVBAcMCVJhanNhbWFuZDEhMB8GA1UECgwYSG91c3RvbiBTeXN0ZW0gUHZ0LiBMdGQuMRYwFAYDVQQLDA1Ub2xsIFBsYXphIElUMR8wHQYDVQQDDBZiYWxpY2hhdG9sbHBsYXphLmNvLmluMScwJQYJKoZIhvcNAQkBFhhzaW5naGthbGlrYTA1NEBnbWFpbC5jb20wHhcNMjYwMzE5MTgyOTQwWhcNMjcwMzE5MTgyOTQwWjCBujELMAkGA1UEBhMCSU4xEjAQBgNVBAgMCVJhamFzdGhhbjESMBAGA1UEBwwJUmFqc2FtYW5kMSEwHwYDVQQKDBhIb3VzdG9uIFN5c3RlbSBQdnQuIEx0ZC4xFjAUBgNVBAsMDVRvbGwgUGxhemEgSVQxHzAdBgNVBAMMFmJhbGljaGF0b2xscGxhemEuY28uaW4xJzAlBgkqhkiG9w0BCQEWGHNpbmdoa2FsaWthMDU0QGdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMxiWYXYBnlwn9gSA706BF1EpBpm8NPWkY971SxbcoFRmz43PBYvhTexSbwYBucZUgNYNXNfkqW+jcfSrzsIBHkDd0RT0ea7REGktDT5pVndxXLSc3Zo7E7i6ow+N/Psyt4k8Sas9WEJ9+S7Lo+ba/CA4Mf5loQwdl8+II8SX3rH24HqAS/vI+smP4VEcXFX9WaxaisqGLll6vjK32o7CBAIyWwTjsAJzdGRfhfLBUpo2unPxAYA98DVG/rLQdJC1FRK61q5Ui/iGOEfP0OTo58ypSsHs0ogZcizGWsbJ2RVppcDsBpMiiHB2/1Cxzf0UhEBPCjyjFBtnOmGu58O+y8CAwEAAaNTMFEwHQYDVR0OBBYEFOp4zyFI7YEI44dXa8UCDSaZFHpbMB8GA1UdIwQYMBaAFOp4zyFI7YEI44dXa8UCDSaZFHpbMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAAMrjPfdBWTx5oJQumFKa7I9Y4AlBmb2EESMsyO/HKUiXfuYzHbr/sB5F8G1KLvxg3iVW6SDetBUSVZGMv54jaTd3OG/JW3VThdgQGgBpNuU1+aXk+eE69KXlsozOvjfQGscKyj4IPvCpIQJpPYtDQamgH31EGFl8z7s76r/nB75MVNSto5mucmVzvQ2o1j2Oh3nQ8O1mzqP7V36YQ58smpD36CJsbFH7zh7IEwhnRVYVuwq7m4BeBmgxz7UPritxkG4r/T2CPbb5w2J06R1A9gBLFjF+/OtT5FkCCgmjzaSqyLeSN+rW3c+2XYbNhBLtvC2kNuXTgKurhbJsRZIVJc=</X509Certificate></X509Data></KeyInfo></Signature></etc:ReqPay>
+ReqPay response_status: 202
+ReqPay response_xml: Accepted
+[NETC_CALLBACK] ResponsePay accepted { 
+  root: 'RespPay',
+  msgId: '536777260614171614809',
+  orgId: 'BALI',
+  txnId: '536777260614171614809',
+  matchedValidtagslogId: 58705
+}
+getTagInfo called with: {
+  tagId: '34161FA820328EE849B3F580',   
+  operator_id: 30,
+  shift_id: 3,
+  lane_id: 6,
+  entrydatetime: '2026-06-14T17:16:56' 
+}
+TagDetails url: https://iblrequest1.maximusinfoware.com/NETC/api/RequestTagDetail 
+TagDetails request_xml:
+            <etc:ReqTagDetails xmlns:etc="http://npci.org/etc/schema/">
+                <Head ver="1.0" ts="2026-06-14T17:16:57" orgId="BALI" msgId="536777260614171657956"/>
+                <Txn id="536777260614171657956" note="2026-06-14T17:16:57" ts="2026-06-14T17:16:57" type="FETCH">
+                    <Vehicle TID="" vehicleRegNo="" tagId="34161FA820328EE849B3F580"/>     
+                </Txn>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>A4rZ1BP9sXMR+CMKpAimsYOitXc=</DigestValue></Reference></SignedInfo><SignatureValue>QBy3hzxfqZtkmzfL2qjmTz+c0WkxvoG05IqsHNTBU3eH55wGgnzYENpvZXkFC94Spbv1PykIqlEgQZ7nHdO2Kcja55rl0Fq2Q9qclyIf/TiwhvEN3ul+HbUPfB4jw1TgDMAyL/omBuwn76iNaSlKWQz8BBCq6QRkIKiiSm0pQp85Ch2nQWDwlr9cW32WxYeh/V40kstz+oQjCiQPG9FzPm+EI7ORuGzwcotXfpuuvFckoxDz/YwKtAx53P4JsXK4axGriw6lvvxFN22fh4SxXFczfCfgR5RKEqHX2GBqRKq0uA2tHigPKLOgp+kWJrgg1/37nLM4eIrRqRMJDIqCrA==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIEVzCCAz+gAwIBAgIUCU0bj+U7IQM2+z0O3CJ9B4C7DgwwDQYJKoZIhvcNAQELBQAwgboxCzAJBgNVBAYTAklOMRIwEAYDVQQIDAlSYWphc3RoYW4xEjAQBgNVBAcMCVJhanNhbWFuZDEhMB8GA1UECgwYSG91c3RvbiBTeXN0ZW0gUHZ0LiBMdGQuMRYwFAYDVQQLDA1Ub2xsIFBsYXphIElUMR8wHQYDVQQDDBZiYWxpY2hhdG9sbHBsYXphLmNvLmluMScwJQYJKoZIhvcNAQkBFhhzaW5naGthbGlrYTA1NEBnbWFpbC5jb20wHhcNMjYwMzE5MTgyOTQwWhcNMjcwMzE5MTgyOTQwWjCBujELMAkGA1UEBhMCSU4xEjAQBgNVBAgMCVJhamFzdGhhbjESMBAGA1UEBwwJUmFqc2FtYW5kMSEwHwYDVQQKDBhIb3VzdG9uIFN5c3RlbSBQdnQuIEx0ZC4xFjAUBgNVBAsMDVRvbGwgUGxhemEgSVQxHzAdBgNVBAMMFmJhbGljaGF0b2xscGxhemEuY28uaW4xJzAlBgkqhkiG9w0BCQEWGHNpbmdoa2FsaWthMDU0QGdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMxiWYXYBnlwn9gSA706BF1EpBpm8NPWkY971SxbcoFRmz43PBYvhTexSbwYBucZUgNYNXNfkqW+jcfSrzsIBHkDd0RT0ea7REGktDT5pVndxXLSc3Zo7E7i6ow+N/Psyt4k8Sas9WEJ9+S7Lo+ba/CA4Mf5loQwdl8+II8SX3rH24HqAS/vI+smP4VEcXFX9WaxaisqGLll6vjK32o7CBAIyWwTjsAJzdGRfhfLBUpo2unPxAYA98DVG/rLQdJC1FRK61q5Ui/iGOEfP0OTo58ypSsHs0ogZcizGWsbJ2RVppcDsBpMiiHB2/1Cxzf0UhEBPCjyjFBtnOmGu58O+y8CAwEAAaNTMFEwHQYDVR0OBBYEFOp4zyFI7YEI44dXa8UCDSaZFHpbMB8GA1UdIwQYMBaAFOp4zyFI7YEI44dXa8UCDSaZFHpbMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAAMrjPfdBWTx5oJQumFKa7I9Y4AlBmb2EESMsyO/HKUiXfuYzHbr/sB5F8G1KLvxg3iVW6SDetBUSVZGMv54jaTd3OG/JW3VThdgQGgBpNuU1+aXk+eE69KXlsozOvjfQGscKyj4IPvCpIQJpPYtDQamgH31EGFl8z7s76r/nB75MVNSto5mucmVzvQ2o1j2Oh3nQ8O1mzqP7V36YQ58smpD36CJsbFH7zh7IEwhnRVYVuwq7m4BeBmgxz7UPritxkG4r/T2CPbb5w2J06R1A9gBLFjF+/OtT5FkCCgmjzaSqyLeSN+rW3c+2XYbNhBLtvC2kNuXTgKurhbJsRZIVJc=</X509Certificate></X509Data></KeyInfo></Signature></etc:ReqTagDetails>
+TagDetails response_status: 200
+TagDetails response_xml: <etc:RespTagDetails xmlns:etc="http://npci.org/etc/schema/"><Head 
+msgId="536777260614171657956" orgId="INDA" ts="2026-06-14T17:16:57" ver="1.0" /><Txn id="536777260614171657956" note="" orgTxnId="" refUrl="http://npci.org/etc/schema/" ts="2026-06-14T17:16:57" type="FETCH"><Resp respCode="000" result="SUCCESS" successReqCnt="1" totReqCnt="1" ts="2026-06-14T17:16:58"><Vehicle errCode="000"><VehicleDetails><Detail name="TAGID" value="34161FA820328EE849B3F580" /><Detail name="REGNUMBER" value="RJ38UA1280" /><Detail name="TID" value="E2003412013301000FDBF254" /><Detail name="VEHICLECLASS" value="VC4" /><Detail name="TAGSTATUS" value="A" /><Detail name="ISSUEDATE" value="2026-05-31" /><Detail name="EXCCODE" value="00" /><Detail name="BANKID" value="608116" /><Detail name="COMVEHICLE" value="F" /></VehicleDetails></Vehicle></Resp></Txn><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>JCvrFuqGKKEvWAok6+C7d2e7JN6Qhd5CnUKCCxPLKjA=</DigestValue></Reference></SignedInfo><SignatureValue>MwPEz98ddDz4xXNAlTfVY3R9gjNwt3tTcPTCSJAso4CalnWOU1q9nTxjNjQkPgPIZfoGYZr1+hPx8xYIrumBS7brRWM1lFcNEaqmVVkq4xcZRO9t6G4RmJSQpOhub6m/BGCCt09ospCXFIlnHEyFlbSWzKdyYKB/JMr2uVT60IQvSrQGaPPXiGldRh21MUzlUZ495a/S18vKf18kvN3vO8f+n0NR+BWqzhtixUnojNTeWvu7E6tOpyyu92BoXgInbWLQUbwqmYrWkLBv+EfSh635yzLc48UOlX0XTATkz5+I2yKcat4WNB0YEZVHO0wcZqnvPDKqpMoPvBygU03b+g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=*.maximusinfoware.in, O=MAXIMUS INFOWARE (INDIA) PRIVATE LIMITED, L=Thane, S=Maharashtra, C=IN</X509SubjectName><X509Certificate>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</X509Certificate></X509Data></KeyInfo></Signature></etc:RespTagDetails>
+paymentDetection called with body: { 
+  tagid: '34161FA820328EE849B3F580',
+  status: 'active',
+  result: 'SUCCESS',
+  vehicletype: 'VC4',
+  vehicleno: 'RJ38UA1280',
+  tid: 'E2003412013301000FDBF254',
+  vehicleclass: 'VC4',
+  respcode: '00',
+  msgid: '536777260614171657956',
+  validtagslog_id: '58705',
+  anpr_id: null,
+  readerVerificationResult: {
+    tagUserMemory: { tagSignature: null, tagVRN: 'RJ38UA1280', tagVC: 'VC4' },
+    public_key_cvv: null,
+    sign_auth: null,
+    tag_verified: 'false',
+    txn_counter: 'E2003412013301000FDBF254',
+    txn_status: 'active',
+    ts_read: '2026-06-14T17:16:57',
+    vehicle_auth: 'pending'
+  },
+  tag_signature: null,
+  tag_vrn: 'RJ38UA1280',
+  tag_vc: 'VC4',
+  public_key_cvv: null,
+  sign_auth: null,
+  tag_verified: 'false',
+  txn_counter: 'E2003412013301000FDBF254',
+  txn_status: 'active',
+  ts_read: '2026-06-14T17:16:57',
+  vehicle_auth: 'pending'
+}
+ReqPay url: https://iblrequest1.maximusinfoware.com/NETC/api/ReqPay 
+ReqPay request_xml:  
+<etc:ReqPay xmlns:etc="http://npci.org/etc/schema/">
+  <Head msgId="536777260614171700916" orgId="BALI" ts="2026-06-14T17:17:00" ver="1.0"/>    
+  <Meta/>
+  <Txn id="536777260614171700916" note="" orgTxnId="" refId="" refUrl="" ts="2026-06-14T17:16:56" type="DEBIT">
+    <EntryTxn id="536777260614171700916" tsRead="2026-06-14T17:16:57" ts="2026-06-14T17:16:56" type="DEBIT"/>
+  </Txn>
+  <Plaza geoCode="24.8762,73.6852" id="536777" name="Balicha" subtype="National" type="Toll">
+    <EntryPlaza geoCode="24.8762,73.6852" id="536777" name="Balicha" subtype="National" type="Toll"/>
+    <Lane direction="N" id="6" readerId="1007" Status="OPEN" Mode="Normal" laneType="hybrid" Floor="" ExitGate=""/>
+    <EntryLane direction="N" id="6" readerId="1007" Status="OPEN" Mode="Normal" laneType="hybrid" Floor="" EntryGate=""/>
+    <ReaderVerificationResult publicKeyCVV="" procRestrictionResult="ok" signAuth="VALID" tagVerified="NETC TAG" ts="2026-06-14T17:16:56" txnCounter="0" txnStatus="SUCCESS" vehicleAuth="UNKNOWN">
+      <TagUserMemory>
+        <Detail name="TagSignature" value="E2003412013301000FDBF254"/>
+        <Detail name="TagVRN" value="RJ38UA1280"/>
+        <Detail name="TagVC" value="VC4"/>
+      </TagUserMemory>
+    </ReaderVerificationResult>
+  </Plaza>
+  <Vehicle TID="E2003412013301000FDBF254" tagId="34161FA820328EE849B3F580" wim="" staticweight="">
+    <VehicleDetails>
+      <Detail name="AVC" value="1"/>
+      <Detail name="LPNumber" value="RJ38UA1280"/>
+    </VehicleDetails>
+  </Vehicle>
+  <Payment>
+    <Amount curr="INR" value="25" PriceMode="POINT" IsOverWeightCharged="FALSE" PaymentMode="Tag">
+      <OverwightAmount curr="INR" value="0" PaymentMode="Tag"/>
+    </Amount>
+  </Payment>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>0J6oHq6BfbvbB/bpsb1n/k2k3HE=</DigestValue></Reference></SignedInfo><SignatureValue>WertqkoU1C/krTKgjua9rwC6PZerXU9zHiB6Nyx7nKe8RqwEP4QXsZQ/qkeOVnNr50xfOo5CArLmLM+jNKZjNeB4ls1w/KGaGTK12YZzH+jGeQpB6krzAfHYzD9HdAji5j6pQmxAaLKeM/ksiQeq3io39p9HdcbpJ8hvJfM2+nv7aECO6Xfo5kGRmCrJrnC81TgD/UQK9wK27T8/UOfo9y+CyVWPS0E7iBYz+01T/J5IcI0MaeBYgZTfT9bKFU3sUrbEXKxCtMpbkVWH9sGhlC8ydJyYw2ztcYDtatJf/m864fvs6LNgpUN3c3xfgN7MhhiG8gMF6EIsNkkdg66QWg==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIEVzCCAz+gAwIBAgIUCU0bj+U7IQM2+z0O3CJ9B4C7DgwwDQYJKoZIhvcNAQELBQAwgboxCzAJBgNVBAYTAklOMRIwEAYDVQQIDAlSYWphc3RoYW4xEjAQBgNVBAcMCVJhanNhbWFuZDEhMB8GA1UECgwYSG91c3RvbiBTeXN0ZW0gUHZ0LiBMdGQuMRYwFAYDVQQLDA1Ub2xsIFBsYXphIElUMR8wHQYDVQQDDBZiYWxpY2hhdG9sbHBsYXphLmNvLmluMScwJQYJKoZIhvcNAQkBFhhzaW5naGthbGlrYTA1NEBnbWFpbC5jb20wHhcNMjYwMzE5MTgyOTQwWhcNMjcwMzE5MTgyOTQwWjCBujELMAkGA1UEBhMCSU4xEjAQBgNVBAgMCVJhamFzdGhhbjESMBAGA1UEBwwJUmFqc2FtYW5kMSEwHwYDVQQKDBhIb3VzdG9uIFN5c3RlbSBQdnQuIEx0ZC4xFjAUBgNVBAsMDVRvbGwgUGxhemEgSVQxHzAdBgNVBAMMFmJhbGljaGF0b2xscGxhemEuY28uaW4xJzAlBgkqhkiG9w0BCQEWGHNpbmdoa2FsaWthMDU0QGdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMxiWYXYBnlwn9gSA706BF1EpBpm8NPWkY971SxbcoFRmz43PBYvhTexSbwYBucZUgNYNXNfkqW+jcfSrzsIBHkDd0RT0ea7REGktDT5pVndxXLSc3Zo7E7i6ow+N/Psyt4k8Sas9WEJ9+S7Lo+ba/CA4Mf5loQwdl8+II8SX3rH24HqAS/vI+smP4VEcXFX9WaxaisqGLll6vjK32o7CBAIyWwTjsAJzdGRfhfLBUpo2unPxAYA98DVG/rLQdJC1FRK61q5Ui/iGOEfP0OTo58ypSsHs0ogZcizGWsbJ2RVppcDsBpMiiHB2/1Cxzf0UhEBPCjyjFBtnOmGu58O+y8CAwEAAaNTMFEwHQYDVR0OBBYEFOp4zyFI7YEI44dXa8UCDSaZFHpbMB8GA1UdIwQYMBaAFOp4zyFI7YEI44dXa8UCDSaZFHpbMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAAMrjPfdBWTx5oJQumFKa7I9Y4AlBmb2EESMsyO/HKUiXfuYzHbr/sB5F8G1KLvxg3iVW6SDetBUSVZGMv54jaTd3OG/JW3VThdgQGgBpNuU1+aXk+eE69KXlsozOvjfQGscKyj4IPvCpIQJpPYtDQamgH31EGFl8z7s76r/nB75MVNSto5mucmVzvQ2o1j2Oh3nQ8O1mzqP7V36YQ58smpD36CJsbFH7zh7IEwhnRVYVuwq7m4BeBmgxz7UPritxkG4r/T2CPbb5w2J06R1A9gBLFjF+/OtT5FkCCgmjzaSqyLeSN+rW3c+2XYbNhBLtvC2kNuXTgKurhbJsRZIVJc=</X509Certificate></X509Data></KeyInfo></Signature></etc:ReqPay>
+ReqPay response_status: 202
+ReqPay response_xml: Accepted
+[NETC_CALLBACK] ResponsePay accepted { 
+  root: 'RespPay',
+  msgId: '536777260614171700916',
+  orgId: 'BALI',
+  txnId: '536777260614171700916',
+  matchedValidtagslogId: 58705
+}
