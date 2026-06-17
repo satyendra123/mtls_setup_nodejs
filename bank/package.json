@@ -1,0 +1,19 @@
+{
+  "name": "bank-server",
+  "version": "1.0.0",
+  "description": "ABC Bank — mTLS learning server",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev":   "nodemon app.js"
+  },
+  "dependencies": {
+    "dotenv":    "^16.6.1",
+    "express":   "^4.19.2",
+    "openpgp":   "^5.11.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
